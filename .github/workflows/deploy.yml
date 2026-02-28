@@ -29,6 +29,6 @@ jobs:
 
       - name: build, tag, and push to ecr
         run: |
-          docker build -t docker-assignment .
-          docker tag docker-assignment:v1 520112946962.dkr.ecr.us-east-1.amazonaws.com/docker-assignment:v1
-          docker push 520112946962.dkr.ecr.us-east-1.amazonaws.com/docker-assignment:v1
+          docker build -t $REPO_NAME:v1 .
+          docker tag $REPO_NAME:v1 $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$REPO_NAME:v1
+          docker push $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$REPO_NAME:v1
